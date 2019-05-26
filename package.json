@@ -1,0 +1,46 @@
+{
+  "name": "rocketswithgraphql",
+  "version": "1.0.0",
+  "description": "App that lists SpaceX Launch Missions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon index.js",
+    "lint": "./node_modules/.bin/eslint --ext js,jsx --max-warnings 0 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenimCity/rocketsWithGraphql.git"
+  },
+  "author": "Jean Altidor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenimCity/rocketsWithGraphql/issues"
+  },
+  "homepage": "https://github.com/DenimCity/rocketsWithGraphql#readme",
+  "dependencies": {
+    "apollo-server": "^2.5.0",
+    "axios": "^0.18.0",
+    "cookie-parser": "^1.4.4",
+    "esm": "^3.2.25",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.3.0",
+    "graphql-tools": "^4.0.4",
+    "ioredis": "^4.9.3",
+    "log4js": "^4.2.0",
+    "merge-graphql-schemas": "^1.5.8",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "superagent": "^5.0.5",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "nodemon": "^1.18.10"
+  }
+}
