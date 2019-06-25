@@ -10,9 +10,7 @@ const server = new ApolloServer({
   schema,
   context: ({ req, res }) => ({
     req, res, logger, v4, ROUTES, superagent,
-  }),
-  // NOTE: is ensure that sensitive error information is not stored in browser.
-  // NOTE: As well as attach a unique ID to each error for better log tracing.
+  })
 });
 
 
