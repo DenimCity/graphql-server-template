@@ -4,7 +4,7 @@
   "description": "App that lists SpaceX Launch Missions",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "server": "nodemon index.js",
     "lint": "./node_modules/.bin/eslint --ext js,jsx --max-warnings 0 ."
   },
