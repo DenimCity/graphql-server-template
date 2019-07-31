@@ -3,14 +3,13 @@ import { v4 } from 'uuid';
 import superagent from 'superagent';
 import schema from './graphql';
 import { logger } from './utils';
-import ROUTES from './constants';
 
 
 const server = new ApolloServer({
-  schema,
-  context: ({ req, res }) => ({
-    req, res, logger, v4, ROUTES, superagent,
-  })
+    schema,
+    context: ({ req, res }) => ({
+        req, res, logger, v4, ROUTES, superagent,
+    })
 });
 
 
