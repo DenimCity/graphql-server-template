@@ -8,6 +8,5 @@ type Rocket {
 
 
 type Query {
-      rocket(id: Int!): Rocket
       rockets: [Rocket]
 }

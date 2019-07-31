@@ -4,7 +4,6 @@ type Launch {
     launch_year:  String 
     launch_date_local:  String 
     launch_success:  Boolean 
-    rocket: Rocket
 }
 
 
