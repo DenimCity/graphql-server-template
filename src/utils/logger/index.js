@@ -14,6 +14,6 @@ configure({
     },
 });
 
-const logger = getLogger('enter-your-app-name');
+const logger = getLogger('SpaceX App');
 
 export default logger;
