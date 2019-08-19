@@ -12,6 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/DenimCity/rocketsWithGraphql.git"
   },
+ "nodemonConfig": {
+    "ignore": [ "test/*"],
+    "ext": "js,json,graphql"
+  },
   "author": "Jean Altidor",
   "license": "ISC",
   "bugs": {
