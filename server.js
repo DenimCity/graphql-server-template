@@ -1,18 +1,19 @@
 import { ApolloServer } from 'apollo-server';
-import { v4 } from 'uuid';
-import superagent from 'superagent';
-import schema from './graphql';
-import { logger } from './utils';
+import request from 'request';
 
+import schema from './src/graphql';
+import logger from './src/utils/logger';
 
 const server = new ApolloServer({
+    cors: true,
     schema,
-    context: ({ req, res }) => ({
-        req, res, logger, v4, ROUTES, superagent,
+    context: ({ req }) => ({
+        req,
+        logger,
+        request
     })
 });
 
-
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => logger.info(`🚀...Server running on port ${PORT}/graphql`));
+server.listen(PORT, () => logger.info(`🚀...Server running on port ${PORT}`));
