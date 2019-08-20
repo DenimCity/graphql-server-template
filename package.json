@@ -12,9 +12,7 @@
 		"type": "git"
 	},
 	"nodemonConfig": {
-		"ignore": [
-			"test/*"
-		],
+		"ignore": [ "test/*" ],
 		"ext": "js,json,graphql"
 	},
 	"author": "Jean Altidor",
@@ -57,10 +55,6 @@
 		}
 	},
 	"lint-staged": {
-		"src /**/*.{js,jsx}": [
-			"eslint",
-			"pretty-quick — staged",
-			"git add"
-		]
+		"src /**/*.{js,jsx}": [ "eslint", "pretty-quick — staged", "git add" ]
 	}
 }
