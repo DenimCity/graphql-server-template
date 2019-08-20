@@ -5,13 +5,13 @@ import schema from './src/graphql';
 import logger from './src/utils/logger';
 
 const server = new ApolloServer({
-    cors: true,
-    schema,
-    context: ({ req }) => ({
-        req,
-        logger,
-        request
-    })
+	cors: true,
+	schema,
+	context: ({ req }) => ({
+		req,
+		logger,
+		request
+	})
 });
 
 const PORT = process.env.PORT || 5000;
