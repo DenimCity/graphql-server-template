@@ -1,39 +1,24 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "no-global-assign": "off",
-        "indent": [
-            "error",
-            4
-        ],
-        "no-undef": "off",
-        "no-no-global-assign": "off",
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+	parser: 'babel-eslint',
+	parserOptions: {
+		sourceType: 'module',
+		allowImportExportEverywhere: false,
+		codeFrame: false
+	},
+	extends: [ 'airbnb', 'prettier' ],
+	env: {
+		browser: true,
+		jest: true
+	},
+	rules: {
+		'max-len': [ 'error', { code: 100 } ],
+		'prefer-promise-reject-errors': [ 'off' ],
+		'react/jsx-filename-extension': [ 'off' ],
+		'no-param-reassign': [ 'off' ],
+		'no-shadow': [ 'off' ],
+		'import/export': [ 'off' ],
+		camelcase: [ 'off' ],
+		'react/prop-types': [ 'warn' ],
+		'no-return-assign': [ 'off' ]
+	}
 };

@@ -1,46 +1,66 @@
 {
-  "name": "rocketswithgraphql",
-  "version": "1.0.0",
-  "description": "App that lists SpaceX Launch Missions",
-  "main": "server.js",
-  "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "lint": "./node_modules/.bin/eslint --ext js,jsx --max-warnings 0 ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DenimCity/rocketsWithGraphql.git"
-  },
-  "author": "Jean Altidor",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DenimCity/rocketsWithGraphql/issues"
-  },
-  "homepage": "https://github.com/DenimCity/rocketsWithGraphql#readme",
-  "dependencies": {
-    "apollo-server": "^2.5.0",
-    "axios": "^0.18.0",
-    "cookie-parser": "^1.4.4",
-    "esm": "^3.2.25",
-    "express": "^4.16.4",
-    "express-graphql": "^0.7.1",
-    "graphql": "^14.3.0",
-    "graphql-tools": "^4.0.4",
-    "ioredis": "^4.9.3",
-    "log4js": "^4.2.0",
-    "merge-graphql-schemas": "^1.5.8",
-    "redis": "^2.8.0",
-    "request": "^2.88.0",
-    "superagent": "^5.0.5",
-    "uuid": "^3.3.2"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
-    "nodemon": "^1.18.10"
-  }
+	"name": "graphql-server-template",
+	"version": "1.0.0",
+	"description": "App that lists SpaceX Launch Missions",
+	"main": "server.js",
+	"scripts": {
+		"start": "node --exec babel-node server.js",
+		"server": "nodemon --exec babel-node server.js",
+		"lint": "./node_modules/.bin/eslint --ext js,jsx --max-warnings 0 ."
+	},
+	"repository": {
+		"type": "git"
+	},
+	"nodemonConfig": {
+		"ignore": [
+			"test/*"
+		],
+		"ext": "js,json,graphql"
+	},
+	"author": "Jean Altidor",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.5.0",
+		"axios": "^0.18.0",
+		"cookie-parser": "^1.4.4",
+		"cors": "^2.8.5",
+		"dayjs": "^1.8.15",
+		"express": "^4.16.4",
+		"express-graphql": "^0.7.1",
+		"graphql": "^14.3.0",
+		"graphql-tools": "^4.0.4",
+		"log4js": "^4.2.0",
+		"merge-graphql-schemas": "^1.5.8",
+		"request": "^2.88.0",
+		"sequelize": "^5.15.1",
+		"winston": "^3.2.1"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-eslint": "^10.0.2",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-stage-3": "^6.24.1",
+		"eslint": "^6.2.1",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-prettier": "^6.1.0",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.14.3",
+		"eslint-plugin-react-hooks": "^1.7.0",
+		"husky": "^3.0.4",
+		"lint-staged": "^9.2.3",
+		"nodemon": "^1.19.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"src /**/*.{js,jsx}": [
+			"eslint",
+			"pretty-quick — staged",
+			"git add"
+		]
+	}
 }
