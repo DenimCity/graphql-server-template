@@ -20,6 +20,8 @@ module.exports = {
 		'import/export': [ 'off' ],
 		camelcase: [ 'off' ],
 		'react/prop-types': [ 'warn' ],
-		'no-return-assign': [ 'off' ]
+		'no-return-assign': [ 'off' ],
+		'no-use-before-define': [ 'off' ],
+		'max-len': [ 'off' ]
 	}
 };
