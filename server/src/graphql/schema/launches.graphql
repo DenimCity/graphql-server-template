@@ -1,0 +1,34 @@
+type Launch {
+	year: String
+	id: Int
+	cursor: Int
+	site: String
+	launchDate: String
+	launchSuccess: Boolean
+	mission: Mission
+	rocket: Rocket
+}
+
+type Mission {
+	id: Int
+	name: String
+}
+
+type Rocket {
+	id: Int
+	name: String
+	type: String
+}
+
+scalar Upload
+
+type CreateListing {
+	picture: Upload
+}
+
+type Query {
+	launches: [Launch]
+	launch(flight_number: Int!): Launch
+	launchesByID(flight_numbers: [Int!]): [Launch]
+	createLaunch(file: Upload): Boolean
+}
