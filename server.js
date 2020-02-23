@@ -1,8 +1,8 @@
 import { ApolloServer } from 'apollo-server';
-import request from 'request';
 
-import schema from './src/graphql';
-import logger from './src/utils/logger';
+import schema from './server/src/graphql';
+import logger from './server/src/utils/logger';
+import dataSources from './server/src/datasources';
 
 const server = new ApolloServer({
 	cors: true,
@@ -10,10 +10,10 @@ const server = new ApolloServer({
 	context: ({ req }) => ({
 		req,
 		logger,
-		request
+		dataSources
 	})
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 server.listen(PORT, () => logger.info(`🚀...Server running on port ${PORT}`));
